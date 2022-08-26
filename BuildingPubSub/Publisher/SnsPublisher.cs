@@ -34,6 +34,7 @@ public class SnsPublisher
             request.MessageAttributes.Add(attribute.Key, attribute.Value);
         }
 
-        await _sns.PublishAsync(request);
+        var response = await _sns.PublishAsync(request);
+        Console.WriteLine(response);
     }
 }

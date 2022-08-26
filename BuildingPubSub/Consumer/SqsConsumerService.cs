@@ -10,7 +10,7 @@ public class SqsConsumerService : BackgroundService
 {
     private readonly IAmazonSQS _sqs;
     private readonly MessageDispatcher _dispatcher;
-    private readonly string _queueName = Environment.GetEnvironmentVariable("QUEUE_NAME")!;
+    private readonly string _queueName = "customers-filtered";
     private readonly List<string> _messageAttributeNames = new() { "All" };
 
     public SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher)
